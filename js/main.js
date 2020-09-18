@@ -34,6 +34,10 @@ $(window).mousemove(function(evt){
     detect(".roro",pagex);
 });
 
+$('.follow').on('click', function() {
+    open('https://www.instagram.com/toemomo.psd/?hl=zh-tw')
+})
+
 
 const worksdata = [{
     url: "https://lh3.googleusercontent.com/nV0pHicfJlteL2u0nxE9CNAvt05BpqEZoR0zP9mw7E-f5tCJJfuzrdlDD9GKWqysHb-xQeTV2Qen22AFJwCH5mnhGZvgwg2zeDGRAkIgoVG7mo6YKj-8QAsg294VjKL9czPJVBhEDA=w1800",

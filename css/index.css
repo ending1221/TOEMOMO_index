@@ -506,19 +506,19 @@ section#contact .col-md-12 .follow {
   text-align: center;
   margin-bottom: 0px;
   z-index: 16;
+  cursor: pointer;
 }
 
-section#contact .col-md-12 .follow a, section#contact .col-md-12 .follow p {
+section#contact .col-md-12 .follow i, section#contact .col-md-12 .follow p {
   display: inline-block;
   vertical-align: top;
   color: #F5BCC6;
 }
 
-section#contact .col-md-12 .follow a {
+section#contact .col-md-12 .follow i {
   text-decoration: none;
   font-size: 20px;
-  margin-left: 8px;
-  cursor: pointer;
+  margin-right: 5px;
 }
 
 section#contact .col-md-12 .contact_detail {
