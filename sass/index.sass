@@ -1,0 +1,394 @@
+$blue_light: #6FBADD
+$blue_sky: #ACE4F9
+$blue: #0E6F9F
+$blue_dark: #0D2E3D
+$brown_light: #C1B4A0
+$brown: #6E614D
+$brown_dark: #40382D
+$pink_light: #F4DCE0
+$pink: #F5BCC6
+$pink_dark: #BE727E
+$white: #FDFDFD
+$yellow: #F49C0E
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+
+@mixin xycenter
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+  
+@mixin xcenter
+  left: 50%
+  transform: translateX(-50%)
+
+
+html, body 
+  margin: 0
+  padding: 0
+  overflow-y: auto
+  overflow-x: hidden  
+
+
+*
+  font-family: 'Quicksand','微軟正黑體'
+  position: relative
+  webkit-overflow-scrolling: touch
+  //debug
+  // border: solid 1px
+  // header
+  //   display: none
+  // section
+  //   display: none
+  // section#works
+  //   display: block
+h3
+  font-size: 25px
+  letter-spacing: 1px  
+p
+  font-size: 15px
+  letter-spacing: 1px
+  
+.navbar.navbar-expand-sm.fixed-top.navbar-dark
+  background-color: rgba($blue,0.8)
+  transition: 0.5s
+  &.at_top
+    background-color: transparent
+  a.navbar-brand
+    color: $pink
+    font-weight: 700
+  li
+    color: $white
+    font-weight: 700
+    margin-left: 15px
+    a
+      transition: 0.5s
+      &:hover
+        color: $pink
+
+#index
+  .container-fluid
+    padding: 0
+
+.sky
+  background-color: $blue_sky
+  +size(100%,500px)
+  .logo
+    position: absolute
+    +xycenter
+    width: 330px
+  .cloud
+    position: absolute
+    animation: cloud 5s infinite
+
+  .cloud1
+    top: 250px
+    left: 25px
+    animation-delay: -0.5s
+    width: 200px
+  .cloud2
+    top: 300px
+    left: 80px
+    animation-delay: -0.75s
+    width: 200px
+  .cloud3
+    top: 130px
+    right: 80px
+    animation-delay: -0.65s
+    width: 200px
+  .cloud4
+    top: 50px
+    right: 30px
+    animation-delay: -0.35s
+    width: 200px
+    
+  
+  
+.water
+  background-color: $blue_light
+  +size(100%,300px)
+  .explore
+    position: absolute
+    bottom: 25px
+    +xcenter
+    color: $white
+    opacity: 0
+    transition: 0.5s
+    cursor: pointer
+    text-decoration: none
+    &.at_top
+      opacity: 1
+    &:before, &:after
+      content: "V"
+      position: absolute
+      left: 50%
+      transform: translateX(-50%) scaleY(0.5)
+      bottom: -20px
+    &:after
+      bottom: -25px
+    
+  .boat
+    width: 450px
+    margin-left: auto
+    margin-right: auto
+    transform: scale(1.2)
+    .boaticon, .water1, .water2
+      position: absolute
+      +xcenter
+      top: -180px
+    .boaticon
+      animation: boat 2s infinite
+      max-width: 350px
+      width: 100%
+    .water1, 
+      width: 350px
+      top: 25px
+      z-index: 5
+      opacity: 0.6
+      
+    .water2
+      width: 350px
+      top: 28px
+      z-index: 6
+      opacity: 0.6
+      animation: water 2s infinite
+
+  
+// index動畫區
+@keyframes cloud
+  0%
+    transform: translateX(0px)
+  50%
+    transform: translateX(-10px)
+  100%
+    transform: translateX(0px)
+
+@keyframes boat
+  0%
+    top: -180px
+  50%
+    top: -183px
+  100%
+    top: -180px
+  
+@keyframes water
+  0%
+    transform: translateX(-50%) scale(1)
+    opacity: 1
+  100%
+    transform: translateX(-50%) scale(1.2)
+    opacity: 0
+
+
+  
+section#about
+  transition: 0.5s
+  .container-fluid
+    padding-right: 0
+    padding-left: 0
+  .top
+    background: linear-gradient($blue_light 0%, rgba($blue_dark,0.92) 80%, $blue_dark 100%)
+    width: 100%
+    height: 200px
+    text-align: center
+    color: $white
+    padding-top: 50px
+    padding-bottom: 50px
+    .texts
+      p
+        margin: 5px
+        
+section#roles
+  .container-fluid
+    padding-right: 0
+    padding-left: 0
+  .bottom
+    background-color: $blue_dark
+    .col-md-6
+      text-align: center
+      color: $white
+      padding: 40px 0px 0px 0px 
+      overflow: hidden
+      hr
+        border: solid 2px $pink
+        width: 40px
+        margin-top: 0px
+      h3
+        padding: 20px
+        margin-bottom: 0px
+      ul
+        width: 60%
+        margin-right: auto
+        margin-left: auto
+        text-align: left
+        li
+          list-style: none
+          color: $pink
+          span
+            color: $white
+            margin-left: 5px
+      img
+        width: 70%
+        max-width: 500px
+        transition: 0.5s
+      .grass
+        position: absolute
+        left: 0px
+        bottom: 0px
+        min-width: 100%
+      .grass1
+        transform: scaleX(-1)
+        left: 0px
+        bottom: -10px
+        
+      .yellow_border
+        border: solid 2px $yellow
+      .yellow
+        color: $yellow
+.leaf
+  min-width: 120%
+  +xcenter
+  position: absolute
+  bottom: -200px
+  z-index: 16
+.flower_top
+  min-width: 120%
+  position: absolute
+  bottom: -380px
+  +xcenter
+  z-index: 17
+  
+
+
+section#works
+  +size(100%,100%)
+  background-color: $blue_dark
+  .container
+    padding: 70px 30px
+    top: 50px
+  .work
+    z-index: 17
+    padding: 20px
+    box-sizing: border-box
+    &:hover
+      .text,.workbox
+        opacity: 1
+    .workbox
+      +size(calc(100% - 40px),calc(100% - 40px))
+
+      position: absolute
+      +xycenter
+      
+      background-color: rgba(0,0,0,0.7)
+      opacity: 0
+      z-index: 5
+      transition: 0.5s
+    img
+      width: 100%
+    .text
+      position: absolute
+      +xycenter
+      z-index: 5
+      opacity: 0
+      color: $white
+      transition: 0.5s
+      
+  .background_flower
+    img
+      min-width: 120%
+      position: absolute
+      +xcenter
+      z-index: 15
+
+      
+section#contact
+  background-color: $blue_dark
+  color: $white
+  label
+    z-index: 16
+  button
+    z-index: 16
+  .content
+    padding-top: 80px
+    padding-bottom: 30px
+  input,textarea
+    display: block
+    border: none
+    width: 100%
+    padding: 3px 5px
+    z-index: 16
+  textarea
+    resize: none
+    height: 150px
+  .col-md-12
+    padding: 80px 0px 
+    .flower
+      position: absolute
+      width: 200px
+    .left
+      left: 35px
+      top: 40px
+    .right
+      right: 40px
+      top: 80px
+    p
+      text-align: center
+      margin-bottom: 5px
+      z-index: 16
+    
+    .follow
+      text-align: center
+      margin-bottom: 0px
+      z-index: 16
+      a,p
+        display: inline-block
+        vertical-align: top
+        color: $pink
+      a
+        text-decoration: none
+        font-size: 20px
+        margin-left: 8px
+        cursor: pointer
+    .contact_detail
+      padding: 0px 80px
+  button.btn.btn-outline-dark
+    margin-top: 10px
+    color: $white
+    border: solid 1px $pink
+    left: 50%
+    transform: translateX(-50%) scale(0.8)
+    &:hover
+      background-color: $pink
+#contact_ro
+  width: 50%
+  position: absolute
+  right: 0px
+  bottom: 50px
+  min-width: 150px
+  max-width: 300px
+
+footer#footer
+  background-color: $pink
+  padding: 30px 0px
+  .logo
+    +xcenter
+    width: 300px
+    
+@media screen and(max-width: 1200px)
+  .leaf
+    bottom: -160px
+  .flower_top
+    bottom: -300px
+  
+@media screen and(max-width: 1000px)
+  .leaf
+    bottom: -120px
+  .flower_top
+    bottom: -230px
+@media screen and(max-width: 768px)
+  .leaf
+    bottom: -100px
+  .flower_top
+    bottom: -180px
