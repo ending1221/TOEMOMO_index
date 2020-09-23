@@ -273,9 +273,6 @@ section#about {
 section#about .container-fluid {
   padding-right: 0;
   padding-left: 0;
-}
-
-section#about .top {
   background: -webkit-gradient(linear, left top, left bottom, from(#6FBADD), color-stop(80%, rgba(13, 46, 61, 0.92)), to(#0D2E3D));
   background: linear-gradient(#6FBADD 0%, rgba(13, 46, 61, 0.92) 80%, #0D2E3D 100%);
   width: 100%;
@@ -286,86 +283,87 @@ section#about .top {
   padding-bottom: 50px;
 }
 
-section#about .top .texts p {
+section#about .container-fluid .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section#about .container-fluid .texts p {
   margin: 5px;
 }
 
 section#roles .container-fluid {
   padding-right: 0;
   padding-left: 0;
-}
-
-section#roles .bottom {
   background-color: #0D2E3D;
 }
 
-section#roles .bottom .col-md-6 {
+section#roles .container-fluid .col-md-6 {
   text-align: center;
   color: #FDFDFD;
   padding: 40px 0px 0px 0px;
   overflow: hidden;
 }
 
-section#roles .bottom .col-md-6 hr {
+section#roles .container-fluid hr {
   border: solid 2px #F5BCC6;
   width: 40px;
   margin-top: 0px;
 }
 
-section#roles .bottom .col-md-6 h3 {
+section#roles .container-fluid h3 {
   padding: 20px;
   margin-bottom: 0px;
-  font-weight: 600;
 }
 
-section#roles .bottom .col-md-6 ul {
+section#roles .container-fluid ul {
   width: 60%;
   margin-right: auto;
   margin-left: auto;
   text-align: left;
 }
 
-section#roles .bottom .col-md-6 ul li {
+section#roles .container-fluid ul li {
   list-style: none;
   color: #F5BCC6;
-  letter-spacing: 2px;
 }
 
-section#roles .bottom .col-md-6 ul li span {
+section#roles .container-fluid ul li span {
   color: #FDFDFD;
   margin-left: 5px;
 }
 
-section#roles .bottom .col-md-6 img {
+section#roles .container-fluid img {
   width: 70%;
   max-width: 500px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-section#roles .bottom .col-md-6 .grass {
+section#roles .container-fluid .grass {
   position: absolute;
   left: 0px;
   bottom: 0px;
   min-width: 100%;
 }
 
-section#roles .bottom .col-md-6 .grass1 {
+section#roles .container-fluid .grass1 {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
   left: 0px;
   bottom: -10px;
 }
 
-section#roles .bottom .col-md-6 .yellow_border {
+section#roles .container-fluid .yellow_border {
   border: solid 2px #F49C0E;
 }
 
-section#roles .bottom .col-md-6 .yellow {
+section#roles .container-fluid .yellow {
   color: #F49C0E;
 }
 
-.leaf {
+section#roles .container-fluid .leaf {
   min-width: 120%;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -375,7 +373,7 @@ section#roles .bottom .col-md-6 .yellow {
   z-index: 16;
 }
 
-.flower_top {
+section#roles .container-fluid .flower_top {
   min-width: 120%;
   position: absolute;
   bottom: -380px;
@@ -461,7 +459,7 @@ section#contact button {
   z-index: 16;
 }
 
-section#contact .content {
+section#contact .row {
   padding-top: 80px;
   padding-bottom: 30px;
 }
