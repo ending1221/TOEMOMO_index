@@ -521,12 +521,17 @@ section#contact .col-md-12 .follow i {
   margin-right: 5px;
 }
 
-section#contact .col-md-12 .contact_detail {
-  padding: 0px 80px;
+section#contact .row.contact_detail {
+  padding: 0px 40px;
+  margin-bottom: 15px;
+}
+
+section#contact .row.contact_detail textarea, section#contact .row.contact_detail input {
+  border-radius: 5px;
 }
 
 section#contact button.btn.btn-outline-dark {
-  margin-top: 10px;
+  margin-top: 15px;
   color: #FDFDFD;
   border: solid 1px #F5BCC6;
   left: 50%;
