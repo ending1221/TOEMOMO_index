@@ -154,6 +154,13 @@ p {
           transform: scale(1.2);
 }
 
+@media (max-width: 768px) {
+  .water .boat {
+    -webkit-transform: scale(1) translateX(-2rem);
+            transform: scale(1) translateX(-2rem);
+  }
+}
+
 .water .boat .boaticon, .water .boat .water1, .water .boat .water2 {
   position: absolute;
   left: 50%;
@@ -276,7 +283,6 @@ section#about .container-fluid {
   background: -webkit-gradient(linear, left top, left bottom, from(#6FBADD), color-stop(80%, rgba(13, 46, 61, 0.92)), to(#0D2E3D));
   background: linear-gradient(#6FBADD 0%, rgba(13, 46, 61, 0.92) 80%, #0D2E3D 100%);
   width: 100%;
-  height: 200px;
   text-align: center;
   color: #FDFDFD;
   padding-top: 50px;
@@ -287,6 +293,16 @@ section#about .container-fluid .row {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+section#about .container-fluid .texts {
+  padding: 0 3.5rem;
+}
+
+@media (max-width: 768px) {
+  section#about .container-fluid .texts {
+    text-align: left;
+  }
 }
 
 section#about .container-fluid .texts p {
@@ -303,6 +319,9 @@ section#roles .container-fluid .col-md-6 {
   text-align: center;
   color: #FDFDFD;
   padding: 40px 0px 0px 0px;
+}
+
+section#roles .container-fluid .row :nth-child(1) {
   overflow: hidden;
 }
 
@@ -364,13 +383,18 @@ section#roles .container-fluid .yellow {
 }
 
 section#roles .container-fluid .leaf {
-  min-width: 120%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  min-width: 110vw;
   position: absolute;
-  bottom: -200px;
   z-index: 16;
+  bottom: -25%;
+  left: -105%;
+}
+
+@media (max-width: 768px) {
+  section#roles .container-fluid .leaf {
+    left: -5%;
+    bottom: -13%;
+  }
 }
 
 section#roles .container-fluid .flower_top {
@@ -387,6 +411,19 @@ section#works {
   width: 100%;
   height: 100%;
   background-color: #0D2E3D;
+  background-image: url(https://lh3.googleusercontent.com/C-7mJHioHJW8_cLnzmMuMAuVm8o22kysk8nrqwIHuIeJcWNFPeVq4LRq2jeiRE55xvycg7402Czq4IaUAIOQi1aUBW9UlZiQcc7OhTU27X9wNFmv5pEpY0FTb32NS2p5qg7zl0zdpw=w1800);
+  background-position-x: -25%;
+}
+
+section#works::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, #0D2E3D));
+  background: linear-gradient(transparent 0%, #0D2E3D 90%);
 }
 
 section#works .container {
@@ -394,11 +431,37 @@ section#works .container {
   top: 50px;
 }
 
+section#works .col-md-4.work {
+  -webkit-box-flex: calc( 33.3333% - 1rem);
+      -ms-flex: calc( 33.3333% - 1rem);
+          flex: calc( 33.3333% - 1rem);
+  max-width: calc( 33.3333% - 1rem);
+}
+
+@media (max-width: 768px) {
+  section#works .col-md-4.work {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+  }
+}
+
 section#works .work {
   z-index: 17;
-  padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+  margin: .5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  section#works .work {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
 }
 
 section#works .work:hover .text, section#works .work:hover .workbox {
@@ -406,8 +469,8 @@ section#works .work:hover .text, section#works .work:hover .workbox {
 }
 
 section#works .work .workbox {
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
+  width: 101%;
+  height: 101%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -422,6 +485,7 @@ section#works .work .workbox {
 
 section#works .work img {
   width: 100%;
+  height: 100%;
 }
 
 section#works .work .text {
@@ -444,6 +508,14 @@ section#works .background_flower img {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 15;
+}
+
+@media (max-width: 768px) {
+  section#works .background_flower img {
+    height: 100vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 section#contact {
@@ -537,6 +609,12 @@ section#contact button.btn.btn-outline-dark {
   left: 50%;
   -webkit-transform: translateX(-50%) scale(0.8);
           transform: translateX(-50%) scale(0.8);
+}
+
+@media (max-width: 768px) {
+  section#contact button.btn.btn-outline-dark {
+    width: 100%;
+  }
 }
 
 section#contact button.btn.btn-outline-dark:hover {

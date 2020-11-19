@@ -20,7 +20,7 @@ function detect(name,x) {
     if(Math.abs(x-place)<80){
         $(name).css("bottom","0px");
     } else{
-        $(name).css("bottom","-100px");
+        $(name).css("bottom","-90px");
     }
 }
 
